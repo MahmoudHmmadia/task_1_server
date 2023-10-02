@@ -14,10 +14,12 @@ const io = new Server(server, {
   },
 });
 io.on("connection", (socket) => {
-  socket.on("send_message", (data) => {
+  socket.on("send_message", ({ year, salary }) => {
+    console.log(year);
+
     socket.broadcast.emit("receive_message", {
-      message: data,
-      id: new Date().toISOString(),
+      year,
+      salary,
     });
   });
 });
