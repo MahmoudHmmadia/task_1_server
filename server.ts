@@ -9,7 +9,7 @@ const server = app.listen(3500, () => {
 });
 const io = new Server(server, {
   cors: {
-    origin: "https://task-1-i99r.onrender.com/",
+    origin: true,
     methods: ["GET", "POST"],
   },
 });
