@@ -2,7 +2,7 @@ import express from "express";
 import { Server } from "socket.io";
 import cors from "cors";
 const app = express();
-app.use(cors());
+app.use(cors({ origin: true, credentials: true, optionsSuccessStatus: 200 }));
 
 const server = app.listen(3500, () => {
   console.log("Hey");
